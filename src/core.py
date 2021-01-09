@@ -1,9 +1,12 @@
 import sqlite3
-
-from decouple import config
 from datetime import datetime, timedelta
+import sys
+from decouple import config
+from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
+
 from src import logger
 
+TELEGRAM_TOKEN = config("TELEGRAM_TOKEN", "")
 
 def read_vacations_db():
     conn = sqlite3.connect("vacations.db")
@@ -36,5 +39,40 @@ def next_holiday():
             return v
 
 
+def start(bot, update):
+    response_message = "Fala essa galera!"
+    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+
+
+def unknown(bot, update):
+    response_message = "Tá doidé?"
+    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+
+
+def holiday(bot, update):
+    next_holiday_info = next_holiday()
+    message = (
+        f"O próximo feriado é em {next_holiday_info['data']}, "
+        f"referente a {next_holiday_info['nome_feriado']}, "
+        f"{next_holiday_info['dia_semana']}."
+    )
+    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+
+
+def main():
+    updater = Updater(token=TELEGRAM_TOKEN)
+    dispatcher = updater.dispatcher
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(CommandHandler("holiday", holiday))
+    dispatcher.add_handler(MessageHandler(Filters.command, unknown))
+    updater.start_polling()
+    updater.idle()
+
+
 if __name__ == "__main__":
-    logger.info(next_holiday())
+    logger.info("Initializing bot...")
+    try:
+        main()
+    except (KeyboardInterrupt, SystemExit):
+        logger.info("Stopping bot...")
+        sys.exit(0)
