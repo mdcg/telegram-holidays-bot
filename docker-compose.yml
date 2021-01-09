@@ -9,7 +9,7 @@ services:
       - ./config/.env
     command: >
       sh -c "python --version
-      && python src/generate_db.py vacations.csv"
+      && python -m src.generate_db vacations.csv"
     volumes:
       - .:/code
   bot:
@@ -20,7 +20,8 @@ services:
       - ./config/.env
     command: >
       sh -c "python --version
-      && python src/core.py"
+      && sleep 5
+      && python -m src.core"
     volumes:
       - .:/code
     depends_on:
