@@ -1,1 +1,0 @@
-worker:  python -m src.generate_db vacations.csv && sleep 5 && python -m src.core
