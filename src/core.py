@@ -39,24 +39,24 @@ def next_holiday():
             return v
 
 
-def start(bot, update):
+def start(update, context):
     response_message = "Fala essa galera!"
-    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=response_message)
 
 
-def unknown(bot, update):
+def unknown(update, context):
     response_message = "Tá doidé?"
-    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=response_message)
 
 
-def holiday(bot, update):
+def holiday(update, context):
     next_holiday_info = next_holiday()
     message = (
         f"O próximo feriado é em {next_holiday_info['data']}, "
         f"referente a {next_holiday_info['nome_feriado']}, "
         f"{next_holiday_info['dia_semana']}."
     )
-    bot.send_message(chat_id=update.message.chat_id, text=response_message)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
 def main():
