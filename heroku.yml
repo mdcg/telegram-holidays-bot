@@ -1,5 +1,10 @@
 build:
   docker:
     worker: Dockerfile
+  config:
+    DEBUG: 0
 run:
-  worker: python -m src.generate_db vacations.csv && python -m src.core
+  worker:
+    command:
+      - sh -c "python -m src.generate_db vacations.csv && python -m src.core"
+    image: worker
