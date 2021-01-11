@@ -1,0 +1,2 @@
+class NoNextHolidaysException(Exception):
+    pass
