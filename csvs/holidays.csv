@@ -1,0 +1,11 @@
+date;weekday_name;holiday_name
+01/01/2021;friday;New Year’s Day
+18/01/2021;monday;Martin Luther King
+15/02/2021;monday;President’s Day
+31/05/2021;monday;Memorial Day
+04/07/2021;sunday;Independence Day
+06/09/2021;monday;Labor Day
+11/10/2021;monday;Columbus Day
+11/11/2021;thursday;Veterans Day
+25/11/2021;thursday;Thanksgiving
+25/12/2021;saturday;Christmas

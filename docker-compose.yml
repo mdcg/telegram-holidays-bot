@@ -1,17 +1,6 @@
 version: '2.2'
 
 services:
-  db:
-    build: .
-    stdin_open: true
-    tty: true
-    env_file:
-      - ./config/.env
-    command: >
-      sh -c "python --version
-      && python -m src.generate_db vacations.csv"
-    volumes:
-      - .:/code
   bot:
     build: .
     stdin_open: true
@@ -24,5 +13,3 @@ services:
       && python -m src.core"
     volumes:
       - .:/code
-    depends_on:
-      - db
