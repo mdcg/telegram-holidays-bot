@@ -29,7 +29,7 @@ MESSAGE_LANGUAGE = {
         "NEXT_HOLIDAY_MESSAGE": "Próximo feriado em {} dia(s)\n",
         "HOLIDAY_NAME_MESSAGE": "Se você ficou curioso, será: {}\n",
         "TODAY_IS_HOLIDAY_MESSAGE": "Hoje é feriado, Bom descanso! ({})",
-        "NO_HOLIDAYS_MESSAGE": "Não teremos mais nenhum feriado esse ano! :(",
+        "NO_HOLIDAYS_MESSAGE": "Não teremos mais nenhum feriado esse ano!",
     },
     "ENGLISH": {
         "WEEKEND_MESSAGE": "Unfortunately the next holiday will be on a weekend ({}).\n",
@@ -37,7 +37,7 @@ MESSAGE_LANGUAGE = {
         "NEXT_HOLIDAY_MESSAGE": "Next holiday in {} day(s)\n",
         "HOLIDAY_NAME_MESSAGE": "If you were curious, it will be: {}\n",
         "TODAY_IS_HOLIDAY_MESSAGE": "Today is a holiday, Good rest! ({})",
-        "NO_HOLIDAYS_MESSAGE": "We won't have any more holidays this year! :(",
+        "NO_HOLIDAYS_MESSAGE": "We won't have any more holidays this year!",
     },
 }
 
