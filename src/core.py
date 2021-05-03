@@ -8,22 +8,22 @@ from src.constants import (
     USA_HOLIDAYS_CSV,
     MESSAGE_LANGUAGE,
     COUNTRIES,
+    GREETINGS_MESSAGE,
+    UNKNOWN_COMMAND_MESSAGE,
 )
 from src import logger
 from src.utils import next_holiday, generate_message_by_date
 
 
-TELEGRAM_TOKEN = config("TELEGRAM_TOKEN", "1755403223:AAEsfYCI7IXM4OKo-TzyHBDRwx2xdpn-67c")
+TELEGRAM_TOKEN = config("TELEGRAM_TOKEN", "")
 
 
 def start(update, context):
-    response_message = "Fala essa galera!"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=response_message)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=GREETINGS_MESSAGE)
 
 
 def unknown(update, context):
-    response_message = "Tá doidé?"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=response_message)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=UNKNOWN_COMMAND_MESSAGE)
 
 
 def check_for_holiday(update, context, language):
