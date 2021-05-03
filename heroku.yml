@@ -6,5 +6,5 @@ build:
 run:
   worker:
     command:
-      - sh -c "python -m src.generate_db vacations.csv && python -m src.core"
+      - sh -c "python -m src.core"
     image: worker
