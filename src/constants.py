@@ -5,8 +5,8 @@ BASEDIR = Path(__file__).parent.parent
 BRAZIL_HOLIDAYS_CSV = BASEDIR / Path("csvs/feriados.csv")
 USA_HOLIDAYS_CSV = BASEDIR / Path("csvs/holidays.csv")
 
-GREETINGS_MESSAGE = emoji.emojize(":sunny: :beers: :surfer:")
-UNKNOWN_COMMAND_MESSAGE = emoji.emojize(":question:")
+GREETINGS_MESSAGE = emoji.emojize(":sunny: :beers: :surfer:", use_aliases=True)
+UNKNOWN_COMMAND_MESSAGE = emoji.emojize(":question:", use_aliases=True)
 
 WEEKDAYS = [
     "segunda-feira",
